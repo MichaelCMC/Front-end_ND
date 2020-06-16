@@ -17,11 +17,13 @@ The full project rubric can be found in the Requirement PDF.
 ## Running the Project
 1. Clone the repository
 2. `npm install`
+
 For production code:
-3. `npm run build-prod`
-4. `npm run start`
-5. Go to `localhost://8081`
+1. `npm run build-prod`
+2. `npm run start`
+3. Go to `localhost://8081`
+
 For development code:
-3. `npm run build-dev`
-4. `npm run start`
-5. Go to `localhost://8081` if it hasn't take you there
+1. `npm run build-dev`
+2. `npm run start`
+3. Go to `localhost://8081` if it hasn't take you there
