@@ -1,4 +1,4 @@
-# Landing Page Project (Udacity Front-end Nanodegree)
+# Landing Page Project
 
 ## Starter Code
 For the project, the starter code provided by Udacity gave a static HTML landing page with CSS styling. The starter code can be found at [Udacity Starter Code](https://github.com/udacity/fend/tree/refresh-2019/projects/landing-page)
