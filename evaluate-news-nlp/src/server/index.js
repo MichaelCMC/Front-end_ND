@@ -47,3 +47,5 @@ app.post('/ayilen', (req, res) => {
         }
     });
 });
+
+export { app }
