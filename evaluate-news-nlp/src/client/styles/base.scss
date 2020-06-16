@@ -1,0 +1,66 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 2;
+}
+
+main.positive {
+    background-color: #add8e6;
+}
+
+main.negative {
+    background-color: #ffe46f;
+}
+
+main.neutral {
+    background-color: #d2b48c;
+}
+
+section {
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+.radio-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 1%;
+}
+
+.radio {
+    width: 5%;
+    margin: 0;
+}
+
+#results {
+    font-family: Georgia, serif;
+    line-height: 2;
+    color: #444444;
+    text-align: center;
+    background: #EEEEEE;
+    padding: 5%;
+}
+
+#results .positive {
+    color: #add8e6;
+}
+
+#results .negative {
+    color: #ffe46f;
+}
+
+#results .neutral {
+    color: #d2b48c;
+}

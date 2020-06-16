@@ -1,0 +1,32 @@
+h1 {
+    color: lightslategray;
+}
+
+h3 {
+    color: lightskyblue;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+p {
+    color: teal;
+}
+
+a {
+    text-decoration: none;
+}
+
+footer {
+    color: lightskyblue;
+    margin: 5%;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}

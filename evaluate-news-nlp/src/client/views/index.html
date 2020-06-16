@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Sentiment Analysis</h1>
+    </header>
+
+    <main>
+        <section>
+            <form class="" onsubmit="return Client.handleSubmit(event)">
+                <p> What is the target URL? </p>
+                <input id="name" type="text" name="input" value="" placeholder="Name">
+                <p> What type of link is it?</p>
+                <div class="radio-btn">
+                    <label>
+                        article
+                        <input type="radio" name="type" id="article" class="radio" value="document" checked>
+                    </label>
+                    <label>
+                        tweet
+                        <input type="radio" name="type" id="tweet" class="radio" value="tweet">
+                    </label>
+                </div>
+                <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)"
+                    onsubmit="return Client.handleSubmit(event)">
+            </form>
+            <section>
+
+                <section>
+                    <strong>Sentiment Analysis Result:</strong>
+                    <div id="results"></div>
+                </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2020 Michael Cui</p>
+    </footer>
+    <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
+</body>
+
+</html>
