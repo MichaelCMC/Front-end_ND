@@ -30,3 +30,8 @@ app.get('/geoNamesUserName', (req, res) => {
     console.log("Getting geoNames username")
     res.send(`${process.env.geoNames_username}`);
 })
+
+app.get('/weatherBitAPIKey', (req, res) => {
+    console.log("Getting weatherBit API Key")
+    res.send(`${process.env.weatherBit_APIKey}`);
+})

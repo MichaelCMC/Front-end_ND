@@ -1,28 +1,27 @@
-const getGeoName = async () => {
+import { getGeoNames } from "./getGeoNames"
+import { getWeatherBit } from "./getWeatherBit"
 
-    const geoNameBaseURL = "http://api.geonames.org/postalCodeSearchJSON?placename="
-    const placename = document.getElementById("destination").value;
-    let geoNameUserName = "";
-
-    const getUserName = await fetch("http://localhost:8000/geoNamesUserName");
-    try {
-        geoNameUserName = await getUserName.text();
-    } catch(error) {
-        console.log('error', error);
-    }
-    
-    const url = `${geoNameBaseURL}${placename}&username=${geoNameUserName}`;
-
-    const result = await fetch(url);
-    try {
-        const geoData = await result.json();
-        console.log(geoData.postalCodes[0].lat);
-    } catch (error) {
-        console.log('error', error);
-    }
-
+const formHandler = () => {
+    const dateToday = new Date();
+    const button = document.getElementById("save");
+    const dateForm = document.getElementById("date")
+    button.addEventListener("click", () => {
+        const dateDeparting = new Date(dateForm.value);
+        const daysToTrip = Math.ceil((dateDeparting - dateToday) / (1000 * 60 * 60 * 24));
+        if (daysToTrip >= 0) {
+            getGeoNames().then(geoData => {
+                if (geoData.postalCodes.length) {
+                    const {lat, lng} = geoData.postalCodes[0];
+                    return getWeatherBit(lat, lng, daysToTrip)
+                } else {
+                    throw new Error("Invalid Destination: Cannot find the destination!!!");
+                }
+            }).then(weatherData => {
+                console.log(weatherData);
+            })
+        } else {
+            alert("Invalid Departing Date: Departing date has already occured!!!");
+        }
+    })
 }
-
-export {
-    getGeoName
-}
+export { formHandler }
