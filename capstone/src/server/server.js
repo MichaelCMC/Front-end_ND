@@ -35,3 +35,8 @@ app.get('/weatherBitAPIKey', (req, res) => {
     console.log("Getting weatherBit API Key")
     res.send(`${process.env.weatherBit_APIKey}`);
 })
+
+app.get('/pixabayAPIKey', (req, res) => {
+    console.log("Getting pixabay API Key")
+    res.send(`${process.env.pixabay_APIKey}`);
+})

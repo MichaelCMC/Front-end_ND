@@ -1,7 +1,6 @@
-const getGeoNames = async () => {
+const getGeoNames = async (placeName) => {
 
     const geoNameBaseURL = "http://api.geonames.org/postalCodeSearchJSON?placename="
-    const placename = document.getElementById("destination").value;
     let geoNameUserName = "";
 
     const getUserName = await fetch("http://localhost:8000/geoNamesUserName");
@@ -11,7 +10,7 @@ const getGeoNames = async () => {
         console.log('error', error);
     }
     
-    const url = `${geoNameBaseURL}${placename}&username=${geoNameUserName}`;
+    const url = `${geoNameBaseURL}${placeName}&username=${geoNameUserName}`;
 
     const result = await fetch(url);
     try {
