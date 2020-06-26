@@ -47,4 +47,4 @@ app.get('/pixabayAPIKey', (req, res) => {
     res.send(`${process.env.pixabay_APIKey}`);
 })
 
-export { app }
+module.exports = app;

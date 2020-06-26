@@ -1,5 +1,5 @@
 const request = require('supertest');
-import { app } from "../server/server"
+import app from "../server/server"
 
 describe('Test app', () => {
     test('It should response GET root', async () => {
