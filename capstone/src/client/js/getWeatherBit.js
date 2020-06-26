@@ -11,7 +11,7 @@ const getWeatherBit = async (lat, lon, daysToTrip) => {
     }
 
     let url = "";
-    if (daysToTrip <= 7) {
+    if (daysToTrip == 0) {
         url = `${weatherBitBaseURL}lat=${lat}&lon=${lon}&key=${weatherBitAPIKey}`;
     } else {
         url = `${weatherBitForecastURL}lat=${lat}&lon=${lon}&key=${weatherBitAPIKey}`;

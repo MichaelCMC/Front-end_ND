@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=B612&display=swap');
+
+$top: rgba(244, 246, 255, .9);
+$mid-top: rgba(251, 212, 109, .7);
+$mid-bot: rgba(79, 138, 139, .5);
+$bot: rgba(7, 3, 26, .8);
+
+body {
+    font-family: 'B612', sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+header {
+    background-color: $top;
+    font-size: 2.5em;
+
+    h1 {
+        margin: 0;
+    }
+}
+
+
+main {
+    background-color: $mid-top;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+        "img img img form"
+        "img img img response";
+    align-items: center;
+
+    .image {
+        grid-area: img;
+        padding: 1em;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .form {
+        grid-area: form;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        input,button{
+            margin: .5em;
+            width: auto;
+            height: auto;
+            background: linear-gradient(to bottom,$top 0%,$mid-top 75%,$mid-bot 100%);
+            outline: none;
+            color: $bot;
+            font-size: 1.5rem;
+        }
+
+    }
+
+    .response {
+        grid-area: response;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        font-size: 1.5rem;
+        color: $bot;
+    }
+}
+
+footer {
+    background-color: $mid-bot;
+    padding: 2rem;
+}

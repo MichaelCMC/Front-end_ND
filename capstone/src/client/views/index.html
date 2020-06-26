@@ -15,20 +15,43 @@
 
     <main>
         <div class="image">
-
+            <img src="https://newsroom.aaa.com/wp-content/uploads/2019/09/best-time-book-travel-holidays.jpg"
+                alt="Plane Flying" id="travelImg">
         </div>
-        <div class="text">
+        <div class="form">
             <div>
                 <label for="destination">Destination</label>
-                <input type="text" name="destination" id="destination" placeholder="Paris, France" required>
+                <input type="text" name="destination" id="destination" placeholder="Paris, France" required />
             </div>
             <div>
                 <label for="date">Departing:</label>
-                <input type="date" id="date" name="date" required>
+                <input type="date" id="date" name="date" required />
             </div>
-            <button type="submit" id="save">Save Trip</button>
+            <div>
+                <button type="submit" id="save">Save Trip✈️</button>
+                <button id="remove">Remove Trip🏠</button>
+            </div>
+        </div>
+        <div class="response">
+            <div id="daysToTrip">Days until --</div>
+            <div id="weatherText">Current Weather: --</div>
+            <div id="weatherTemp">Current Temperature --</div>
+            <div id="weatherDes">Current Weather Description --</div>
         </div>
     </main>
+
+    <footer>
+        <p>&copy; 2020 Michael Cui</p>
+    </footer>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
 </body>
 
 </html>
