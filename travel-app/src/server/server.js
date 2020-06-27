@@ -16,6 +16,9 @@ app.use(cors());
 
 app.use(express.static('dist'));
 
+// set up object to store client data
+let clientData = {};
+
 console.log(__dirname);
 
 // sending the dist index file when accessing local server
@@ -31,20 +34,27 @@ app.listen(8000, () => {
 
 // get geoNames user name from the env file
 app.get('/geoNamesUserName', (req, res) => {
-    console.log("Getting geoNames username")
+    console.log("Getting geoNames username");
     res.send(`${process.env.geoNames_username}`);
 })
 
 // get weatherbit API key from env file
 app.get('/weatherBitAPIKey', (req, res) => {
-    console.log("Getting weatherBit API Key")
+    console.log("Getting weatherBit API Key");
     res.send(`${process.env.weatherBit_APIKey}`);
 })
 
 // get pixabay API key from env file
 app.get('/pixabayAPIKey', (req, res) => {
-    console.log("Getting pixabay API Key")
+    console.log("Getting pixabay API Key");
     res.send(`${process.env.pixabay_APIKey}`);
+})
+
+// post client data to local server
+app.post('/saveData', (req, res) => {
+    console.log("Saving client data");
+    clientData = {...(req.body)};
+    console.log(`From client: ${JSON.stringify(clientData)}`);
 })
 
 module.exports = app;

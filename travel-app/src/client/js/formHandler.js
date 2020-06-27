@@ -3,6 +3,7 @@ import { getWeatherBit } from "./getWeatherBit"
 import { getPixabay } from "./getPixabay"
 import { updateUI } from "./updateUI"
 import { removeUI } from "./removeUI"
+import { saveToServer } from "./saveToServer"
 
 // set up form handling function
 const formHandler = () => {
@@ -79,6 +80,8 @@ const formHandler = () => {
                     // send the api data object to the next then
                     return apiData;
                 }).then(apiData => {
+                    // save data to local server
+                    saveToServer(apiData);
                     // with the apiData, update the UI dynamically
                     updateUI(apiData);
                 }).catch(error => {
