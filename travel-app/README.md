@@ -29,6 +29,10 @@ For production code:
 3. Go to `localhost://8000`
 
 For development code:
-1. `npm run dev`
-2. `npm run start`
+1. `npm run start`
+2. `npm run dev`
 3. Go to `localhost://8080` if it hasn't taken you there already
+
+For testing code:
+1. `npm run build`
+2. `npm rum test`
