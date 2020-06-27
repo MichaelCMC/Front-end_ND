@@ -50,12 +50,11 @@ main {
 
         input,button{
             margin: .5em;
-            width: auto;
             height: auto;
             background: linear-gradient(to bottom,$top 0%,$mid-top 75%,$mid-bot 100%);
             outline: none;
             color: $bot;
-            font-size: 1.5rem;
+            font-size: 1rem;
         }
 
     }
@@ -69,6 +68,29 @@ main {
         text-align: center;
         font-size: 1.5rem;
         color: $bot;
+    }
+}
+
+@media (max-width: 550px) {
+    main {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr); 
+    grid-template-areas:
+        "img"
+        "form"
+        "response";
+    align-items: center;
+    }
+}
+
+@media (min-width: 551px) and (max-width: 900px) {
+    main {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr); 
+    grid-template-areas:
+        "img img"
+        "form response";
+    align-items: center;
     }
 }
 
